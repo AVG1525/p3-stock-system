@@ -9,7 +9,6 @@ namespace StockSystem.Infra.Common.Extensions
     {
         public static void AddAuthenticationCustom(this IServiceCollection services)
         {
-            var key = Encoding.ASCII.GetBytes(Key.Secret);
             services.AddAuthentication(x =>
             {
                 x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -22,7 +21,7 @@ namespace StockSystem.Infra.Common.Extensions
                 x.TokenValidationParameters = new TokenValidationParameters
                 {
                     ValidateIssuerSigningKey = true,
-                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Key.Secret)),
                     ValidateIssuer = false,
                     ValidateAudience = false
                 };
