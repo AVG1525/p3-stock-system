@@ -98,3 +98,10 @@ FOREIGN KEY (ID_USER) REFERENCES TB_USER(ID);
 ALTER TABLE TB_ESTABLISHMENT_USER
 ADD CONSTRAINT FK_ID_ESTABLISHMENT
 FOREIGN KEY (ID_ESTABLISHMENT) REFERENCES TB_ESTABLISHMENT(ID);
+
+- retirando establishmentUser pq não é um dado que 
+vamos usar e tbm a relacao é 1:n e não n:m
+
+- retirando a relacao 1:n já qu enão terá esse
+controle no front, deixando ent 1:1 entre user e 
+establishment
