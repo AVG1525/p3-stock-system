@@ -8,5 +8,6 @@
         }
 
         public string Description { get; private set; }
+        public virtual RawMaterial RawMaterial { get; private set; }
     }
 }

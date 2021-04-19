@@ -8,5 +8,6 @@
         }
 
         public string Name { get; private set; }
+        public virtual Establishment Establishment { get; private set; }
     }
 }
