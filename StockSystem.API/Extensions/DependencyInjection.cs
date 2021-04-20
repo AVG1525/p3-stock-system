@@ -19,6 +19,19 @@ namespace StockSystem.API.Extensions
             services.AddScoped<IServiceBase, ServiceBase>();
             services.AddScoped<IUnitOfWork, UnitOfWorkAPI>();
             services.AddTransient(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
+
+            AddServices(services);
+            AddRepositories(services);
+        }
+
+        static void AddServices(IServiceCollection services)
+        {
+            services.AddScoped<IUserService, UserService>();
+        }
+
+        static void AddRepositories(IServiceCollection services)
+        {
+            services.AddScoped<IUserRepository, UserRepository>();
         }
     }
 }

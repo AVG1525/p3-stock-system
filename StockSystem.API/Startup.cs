@@ -27,19 +27,19 @@ namespace StockSystem.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers()
-                .AddNewtonsoftJson(options =>
-                {
-                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-                    options.SerializerSettings.Culture = new CultureInfo("pt-BR");
-                });
-
             services.AddServiceDependencies(ConfigurationRoot);
             services.AddSwaggerCustom();
             services.AddCorsCustom();
             services.AddAuthenticationCustom();
             services.AddAutoMapper(typeof(AutoMapperConfigAPI));
             services.AddLocalizationCustom();
+
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
+                    options.SerializerSettings.Culture = new CultureInfo("pt-BR");
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,23 +50,27 @@ namespace StockSystem.API
                 app.UseDeveloperExceptionPage();
             }
 
-            // app.UseHttpsRedirection();
-            // app.UseSerilogRequestLogging();
+            //app.UseHttpsRedirection();
+            
             app.UseRouting();
+            
             app.UseCors("CorsPolicy");
+            
             app.UseAuthentication();
+            
             app.UseAuthorization();
+            
             app.UseRequestLocalization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
 
             app.UseSwagger();
             app.UseSwaggerUI(conf => {
                 conf.RoutePrefix = string.Empty;
                 conf.SwaggerEndpoint("/swagger/API/swagger.json", "API");
+            });
+
+            app.UseEndpoints(endpoints =>
+            {
+                endpoints.MapControllers();
             });
         }
     }
