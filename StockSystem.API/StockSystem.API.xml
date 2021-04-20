@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>StockSystem.API</name>
+    </assembly>
+    <members>
+        <member name="M:StockSystem.API.Controller.UserController.GetUserById(StockSystem.Domain.Interfaces.Service.IUserService,System.String)">
+            <summary>
+            Get user by id.
+            </summary>
+            <param name="_userService"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSystem.API.Controller.UserController.PostUser(StockSystem.Domain.Interfaces.Service.IUserService,StockSystem.Domain.Request.UserResquest)">
+            <summary>
+            Post an user.
+            </summary>
+            <param name="_userService"></param>
+            <param name="userResquest"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

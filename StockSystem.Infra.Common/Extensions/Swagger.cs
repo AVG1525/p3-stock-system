@@ -9,6 +9,8 @@ namespace StockSystem.Infra.Common.Extensions
         {
             services.AddSwaggerGen(opt =>
             {
+                opt.IncludeXmlComments(@"E:\Projects\dotnet\StockSystem\StockSystem.API\StockSystem.API.xml", includeControllerXmlComments: true);
+
                 opt.SwaggerDoc("API", new OpenApiInfo { Title = "StockSystem - API", Version = "API" });
 
                 opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
@@ -18,20 +20,20 @@ namespace StockSystem.Infra.Common.Extensions
                     Scheme = "Bearer",
                     BearerFormat = "JWT",
                     In = ParameterLocation.Header,
-                    Description = "",
+                    Description = "Autorização via JWT. \r\n\r\n Digite 'Bearer' [espaço] e o JWT gerando na rota Autenticador.\r\n\r\nExemplo: \"Bearer 12345abcdef\"",
                 });
 
                 opt.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
                     {
                         new OpenApiSecurityScheme
-                        {
-                            Reference = new OpenApiReference
                             {
-                                Type = ReferenceType.SecurityScheme,
-                                Id = "Bearer"
-                            }
-                        },
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "Bearer"
+                                }
+                            },
                         new string[] { }
                     }
                 });
