@@ -1,7 +1,10 @@
-﻿namespace StockSystem.Domain.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace StockSystem.Domain.Entities
 {
     public class EntityBase
     {
-        public int Id { get; private set; }
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
     }
 }

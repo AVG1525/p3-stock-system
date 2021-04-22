@@ -1,6 +1,6 @@
 ﻿namespace StockSystem.Domain.Entities
 {
-    public class RawMaterial : EntityBase
+    public class RawMaterial
     {
         public RawMaterial(int idDescriptionRawMaterial, int idEstablishment)
         {
@@ -8,6 +8,7 @@
             IdEstablishment = idEstablishment;
         }
 
+        public int Id { get; set; }
         public int IdDescriptionRawMaterial { get; private set; }
         public int IdEstablishment { get; private set; }
         public virtual DescriptionRawMaterial DescriptionRawMaterial { get; private set; }

@@ -18,6 +18,10 @@ namespace StockSystem.Infra.Data.Mappings
 
             builder.Property(x => x.Name)
                 .HasColumnName("name");
+
+            builder.HasOne(x => x.Establishment)
+                .WithOne(x => x.User)
+                .HasForeignKey<Establishment>(x => x.IdUser);
         }
     }
 }

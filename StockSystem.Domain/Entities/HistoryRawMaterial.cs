@@ -2,7 +2,7 @@
 
 namespace StockSystem.Domain.Entities
 {
-    public class HistoryRawMaterial : EntityBase
+    public class HistoryRawMaterial
     {
         public HistoryRawMaterial(DateTime dateDay, DateTime dateValidity, int amount, decimal unitPrice, int idRawMaterial)
         {
@@ -13,6 +13,7 @@ namespace StockSystem.Domain.Entities
             IdRawMaterial = idRawMaterial;
         }
 
+        public int Id { get; set; }
         public DateTime DateDay { get; private set; }
         public DateTime DateValidity { get; private set; }
         public int Amount { get; private set; }

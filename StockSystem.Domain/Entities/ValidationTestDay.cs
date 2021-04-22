@@ -2,7 +2,7 @@
 
 namespace StockSystem.Domain.Entities
 {
-    public class ValidationTestDay : EntityBase
+    public class ValidationTestDay
     {
         public ValidationTestDay(DateTime dateDay, bool isHoliday, int growthRate)
         {
@@ -11,6 +11,7 @@ namespace StockSystem.Domain.Entities
             GrowthRate = growthRate;
         }
 
+        public int Id { get; set; }
         public DateTime DateDay { get; private set; }
         public bool IsHoliday { get; private set; }
         public int GrowthRate { get; private set; }

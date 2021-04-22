@@ -2,7 +2,7 @@
 
 namespace StockSystem.Domain.Entities
 {
-    public class StatisticsDay : EntityBase
+    public class StatisticsDay
     {
         public StatisticsDay(DateTime dateDay, decimal rawMaterialExpenditure, int growthRate, int idEstablishment)
         {
@@ -12,6 +12,7 @@ namespace StockSystem.Domain.Entities
             IdEstablishment = idEstablishment;
         }
 
+        public int Id { get; set; }
         public DateTime DateDay { get; private set; }
         public decimal RawMaterialExpenditure { get; private set; }
         public int GrowthRate { get; private set; }

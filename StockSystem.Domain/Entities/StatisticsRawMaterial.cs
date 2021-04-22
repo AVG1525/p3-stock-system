@@ -2,7 +2,7 @@
 
 namespace StockSystem.Domain.Entities
 {
-    public class StatisticsRawMaterial : EntityBase
+    public class StatisticsRawMaterial
     {
         public StatisticsRawMaterial(DateTime dateDay, DateTime estimatedStockDateEmpty, int idRawMaterial)
         {
@@ -11,6 +11,7 @@ namespace StockSystem.Domain.Entities
             IdRawMaterial = idRawMaterial;
         }
 
+        public int Id { get; set; }
         public DateTime DateDay { get; private set; }
         public DateTime EstimatedStockDateEmpty { get; private set; }
         public int IdRawMaterial { get; private set; }
