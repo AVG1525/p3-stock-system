@@ -1,6 +1,6 @@
 ﻿namespace StockSystem.Domain.Request
 {
-    public class UserResquest
+    public class UserRequest
     {
         public string Name { get; set; }
     }

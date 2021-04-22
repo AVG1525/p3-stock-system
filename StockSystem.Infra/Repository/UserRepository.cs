@@ -2,7 +2,6 @@
 using StockSystem.Domain.Interfaces.Repository;
 using StockSystem.Infra.Data.Context;
 using StockSystem.Infra.Data.UnitOfWork;
-using System;
 
 namespace StockSystem.Infra.Repository
 {
@@ -11,11 +10,6 @@ namespace StockSystem.Infra.Repository
         private readonly IUnitOfWork _unitOfWork;
         public UserRepository(ApplicationDbContextAPI _context, IUnitOfWork unitOfWork) 
             : base(_context) { _unitOfWork = unitOfWork; }
-
-        public User GetUserById(string id)
-        {
-            return base.GetById(Convert.ToInt32(id));
-        }
 
         public User PostUser(User user)
         {
