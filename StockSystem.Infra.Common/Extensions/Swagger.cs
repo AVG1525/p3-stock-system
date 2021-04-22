@@ -9,7 +9,7 @@ namespace StockSystem.Infra.Common.Extensions
         {
             services.AddSwaggerGen(opt =>
             {
-                opt.IncludeXmlComments(@"E:\Projects\dotnet\StockSystem\StockSystem.API\StockSystem.API.xml", includeControllerXmlComments: true);
+                opt.IncludeXmlComments(@$"{System.IO.Directory.GetCurrentDirectory()}/StockSystem.API.xml", includeControllerXmlComments: true);
 
                 opt.SwaggerDoc("API", new OpenApiInfo { Title = "StockSystem - API", Version = "API" });
 
