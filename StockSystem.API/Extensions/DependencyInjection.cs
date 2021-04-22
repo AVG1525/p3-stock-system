@@ -7,6 +7,7 @@ using StockSystem.Infra.Data.Context;
 using StockSystem.Infra.Data.UnitOfWork;
 using StockSystem.Infra.Repository;
 using StockSystem.Service;
+using System;
 
 namespace StockSystem.API.Extensions
 {
@@ -14,8 +15,11 @@ namespace StockSystem.API.Extensions
     {
         public static void AddServiceDependencies(this IServiceCollection services, IConfigurationRoot configurationRoot) 
         {
-            services.AddDbContext<ApplicationDbContextAPI>(context => context.UseNpgsql(configurationRoot.GetConnectionString("PostgreConnection")));
-
+            services.AddDbContext<ApplicationDbContextAPI>(context => context.UseNpgsql(
+                string.IsNullOrEmpty(Environment.GetEnvironmentVariable("PostgreConnection")) 
+                ? configurationRoot.GetConnectionString("PostgreConnection") 
+                : Environment.GetEnvironmentVariable("PostgreConnection")));
+            
             services.AddScoped<IServiceBase, ServiceBase>();
             services.AddScoped<IUnitOfWork, UnitOfWorkAPI>();
             services.AddTransient(typeof(IRepositoryBase<>), typeof(RepositoryBase<>));
@@ -27,11 +31,13 @@ namespace StockSystem.API.Extensions
         static void AddServices(IServiceCollection services)
         {
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IEstablishmentService, EstablishmentService>();
         }
 
         static void AddRepositories(IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IEstablishmentRepository, EstablishmentRepository>();
         }
     }
 }

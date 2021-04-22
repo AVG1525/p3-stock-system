@@ -15,12 +15,14 @@ namespace StockSystem.Infra.Common.AutoMapper
 
         void AutoMapperRequestForEntity() 
         {
-            CreateMap<UserResquest, User>();
+            CreateMap<UserRequest, User>();
+            CreateMap<EstablishmentRequest, Establishment>();
         }
 
         void AutoMapperEntityForResponse()
         {
             CreateMap<User, UserResponse>();
+            CreateMap<Establishment, EstablishmentResponse>();
         }
     }
 }

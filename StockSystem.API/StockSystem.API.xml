@@ -4,6 +4,13 @@
         <name>StockSystem.API</name>
     </assembly>
     <members>
+        <member name="M:StockSystem.API.Controller.UserController.GetAll(StockSystem.Domain.Interfaces.Service.IUserService)">
+            <summary>
+            Get all users.
+            </summary>
+            <param name="_userService"></param>
+            <returns></returns>
+        </member>
         <member name="M:StockSystem.API.Controller.UserController.GetUserById(StockSystem.Domain.Interfaces.Service.IUserService,System.String)">
             <summary>
             Get user by id.
