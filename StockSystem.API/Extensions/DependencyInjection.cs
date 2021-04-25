@@ -28,13 +28,14 @@ namespace StockSystem.API.Extensions
             AddRepositories(services);
         }
 
-        static void AddServices(IServiceCollection services)
+        private static void AddServices(IServiceCollection services)
         {
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEstablishmentService, EstablishmentService>();
+            services.AddScoped<ICloseDayService, CloseDayService>();
         }
 
-        static void AddRepositories(IServiceCollection services)
+        private static void AddRepositories(IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IEstablishmentRepository, EstablishmentRepository>();

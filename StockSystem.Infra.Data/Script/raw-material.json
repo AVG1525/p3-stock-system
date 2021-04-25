@@ -1,0 +1,26 @@
+{
+    "id_user": "string",
+    "id_establishment": "string",
+    "sale_day": {
+        "date_day": "string",
+        "result_day": "decimal"
+    },
+    "raw_material": [
+        {
+            "description": "danone",
+            "history_raw_material": {
+                "date_validity": "string",
+                "amount": "string",
+                "unit_price": "string"
+            }
+        },
+        {
+            "description": "sorvete",
+            "history_raw_material": {
+                "date_validity": "string",
+                "amount": 0,
+                "unit_price": 0.0
+            }
+        }
+    ]
+}
