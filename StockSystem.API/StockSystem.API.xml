@@ -4,6 +4,37 @@
         <name>StockSystem.API</name>
     </assembly>
     <members>
+        <member name="M:StockSystem.API.Controller.CloseDayController.PostCloseDay(StockSystem.Domain.Interfaces.Service.ICloseDayService,StockSystem.Domain.Request.CloseDayRequest)">
+            <summary>
+            Post a close day.
+            </summary>
+            <param name="_closeDayService"></param>
+            <param name="closeDayRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSystem.API.Controller.EstablishmentController.GetAll(StockSystem.Domain.Interfaces.Service.IEstablishmentService)">
+            <summary>
+            Get all establishments.
+            </summary>
+            <param name="_establishmentService"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSystem.API.Controller.EstablishmentController.GetEstablishmentById(StockSystem.Domain.Interfaces.Service.IEstablishmentService,System.String)">
+            <summary>
+            Get establishment by id.
+            </summary>
+            <param name="_establishmentService"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSystem.API.Controller.EstablishmentController.PostEstablishment(StockSystem.Domain.Interfaces.Service.IEstablishmentService,StockSystem.Domain.Request.EstablishmentRequest)">
+            <summary>
+            Post an establishment.
+            </summary>
+            <param name="_establishmentService"></param>
+            <param name="establishmentRequest"></param>
+            <returns></returns>
+        </member>
         <member name="M:StockSystem.API.Controller.UserController.GetAll(StockSystem.Domain.Interfaces.Service.IUserService)">
             <summary>
             Get all users.
@@ -19,7 +50,7 @@
             <param name="id"></param>
             <returns></returns>
         </member>
-        <member name="M:StockSystem.API.Controller.UserController.PostUser(StockSystem.Domain.Interfaces.Service.IUserService,StockSystem.Domain.Request.UserResquest)">
+        <member name="M:StockSystem.API.Controller.UserController.PostUser(StockSystem.Domain.Interfaces.Service.IUserService,StockSystem.Domain.Request.UserRequest)">
             <summary>
             Post an user.
             </summary>
