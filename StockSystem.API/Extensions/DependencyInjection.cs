@@ -34,6 +34,7 @@ namespace StockSystem.API.Extensions
             services.AddScoped<IEstablishmentService, EstablishmentService>();
             services.AddScoped<ICloseDayService, CloseDayService>();
             services.AddScoped<ISaleDayService, SaleDayService>();
+            services.AddScoped<IDescriptionRawMaterialService, DescriptionRawMaterialService>();
         }
 
         private static void AddRepositories(IServiceCollection services)
@@ -41,6 +42,7 @@ namespace StockSystem.API.Extensions
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IEstablishmentRepository, EstablishmentRepository>();
             services.AddScoped<ISaleDayRepository, SaleDayRepository>();
+            services.AddScoped<IDescriptionRawMaterialRepository, DescriptionRawMaterialRepository>();
         }
     }
 }

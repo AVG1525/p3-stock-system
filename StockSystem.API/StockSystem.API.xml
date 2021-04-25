@@ -12,6 +12,29 @@
             <param name="closeDayRequest"></param>
             <returns></returns>
         </member>
+        <member name="M:StockSystem.API.Controller.DescriptionRawMaterialController.GetAllDescriptionRawMaterial(StockSystem.Domain.Interfaces.Service.IDescriptionRawMaterialService)">
+            <summary>
+            Get all descriptions raw material.
+            </summary>
+            <param name="_descriptionRawMaterialService"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSystem.API.Controller.DescriptionRawMaterialController.GetDescriptionRawMaterialById(StockSystem.Domain.Interfaces.Service.IDescriptionRawMaterialService,System.Int32)">
+            <summary>
+            Get description raw material by id.
+            </summary>
+            <param name="_descriptionRawMaterialService"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSystem.API.Controller.DescriptionRawMaterialController.PostDescriptionRawMaterial(StockSystem.Domain.Interfaces.Service.IDescriptionRawMaterialService,StockSystem.Domain.Request.DescriptionRawMaterialRequest)">
+            <summary>
+            Post a description raw material.
+            </summary>
+            <param name="_descriptionRawMaterialService"></param>
+            <param name="descriptionRawMaterialRequest"></param>
+            <returns></returns>
+        </member>
         <member name="M:StockSystem.API.Controller.EstablishmentController.GetAll(StockSystem.Domain.Interfaces.Service.IEstablishmentService)">
             <summary>
             Get all establishments.
