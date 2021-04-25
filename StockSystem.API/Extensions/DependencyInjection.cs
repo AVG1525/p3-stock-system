@@ -33,12 +33,14 @@ namespace StockSystem.API.Extensions
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IEstablishmentService, EstablishmentService>();
             services.AddScoped<ICloseDayService, CloseDayService>();
+            services.AddScoped<ISaleDayService, SaleDayService>();
         }
 
         private static void AddRepositories(IServiceCollection services)
         {
             services.AddScoped<IUserRepository, UserRepository>();
             services.AddScoped<IEstablishmentRepository, EstablishmentRepository>();
+            services.AddScoped<ISaleDayRepository, SaleDayRepository>();
         }
     }
 }

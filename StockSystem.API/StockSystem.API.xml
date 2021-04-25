@@ -35,6 +35,29 @@
             <param name="establishmentRequest"></param>
             <returns></returns>
         </member>
+        <member name="M:StockSystem.API.Controller.SaleDayController.GetAll(StockSystem.Domain.Interfaces.Service.ISaleDayService)">
+            <summary>
+            Get All sale days.
+            </summary>
+            <param name="_saleDayService"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSystem.API.Controller.SaleDayController.GetSaleDayById(StockSystem.Domain.Interfaces.Service.ISaleDayService,System.Int32)">
+            <summary>
+            Get sale day by id.
+            </summary>
+            <param name="_saleDayService"></param>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StockSystem.API.Controller.SaleDayController.PostSaleDay(StockSystem.Domain.Interfaces.Service.ISaleDayService,StockSystem.Domain.Request.SaleDayRequest)">
+            <summary>
+            Post a sale day.
+            </summary>
+            <param name="_saleDayService"></param>
+            <param name="saleDayRequest"></param>
+            <returns></returns>
+        </member>
         <member name="M:StockSystem.API.Controller.UserController.GetAll(StockSystem.Domain.Interfaces.Service.IUserService)">
             <summary>
             Get all users.
